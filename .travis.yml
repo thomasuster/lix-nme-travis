@@ -1,0 +1,51 @@
+language: objective-c
+
+install:
+  
+  # lix
+  - npm i haxeshim -g
+  - npm i switchx -g
+  - switchx install 3.4.4
+  - npm i lix.pm -g
+  
+  # haxelib for hxcpp
+  - cd ..
+  - mkdir haxelib
+  - haxelib setup haxelib
+  - cd $TRAVIS_BUILD_DIR
+  
+  # libs
+  - lix download
+  
+  # Build HXCPP
+  - LIX_HXCPP=$(node cdFile.js haxe_libraries/hxcpp.hxml)
+  - cd $LIX_HXCPP
+  - haxelib dev hxcpp $LIX_HXCPP
+  - cd $LIX_HXCPP/tools/hxcpp
+  - haxe compile.hxml
+  - cd $LIX_HXCPP/tools/build
+  - haxe compile.hxml
+  - cd $LIX_HXCPP/project
+  - neko build.n
+  
+  # Build NME
+  - LIX_NME=$(node cdFile.js haxe_libraries/nme.hxml)
+  - cd $LIX_NME
+  - haxelib dev nme $LIX_NME
+  - cd $LIX_NME/tools/nme
+  - haxe compile.hxml
+  - cd $LIX_NME/project
+  - neko build.n
+  - cd $LIX_NME/tools/nme
+  - haxelib run nme setup
+   
+script:
+  - cd $LIX_NME
+  - haxelib run nme setup
+  - haxe test.hxml
+  - neko bin/TestMain.n
+  - cd $LIX_NME/tests
+  - haxe -x RunAll
+  - cd $LIX_NME/tests/haxe
+  - haxe compile.hxml
+  - bin/TestMain

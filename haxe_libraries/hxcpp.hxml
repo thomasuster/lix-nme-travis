@@ -1,0 +1,3 @@
+# @install: lix --silent download "https://github.com/HaxeFoundation/hxcpp/archive/9f55106806cb0236e0a8c7f5a37dd72901214775.tar.gz" into hxcpp/3.4.0/github/9f55106806cb0236e0a8c7f5a37dd72901214775
+-D hxcpp=3.4.0
+-cp ${HAXESHIM_LIBCACHE}/hxcpp/3.4.0/github/9f55106806cb0236e0a8c7f5a37dd72901214775/

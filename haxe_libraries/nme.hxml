@@ -1,0 +1,3 @@
+# @install: lix --silent download "https://github.com/haxenme/nme/archive/cc953d6db951e8a0140291ee4e40fa227b00f8ce.tar.gz" into nme/6.0.0/github/cc953d6db951e8a0140291ee4e40fa227b00f8ce
+-D nme=6.0.0
+-cp ${HAXESHIM_LIBCACHE}/nme/6.0.0/github/cc953d6db951e8a0140291ee4e40fa227b00f8ce/
