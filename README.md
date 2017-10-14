@@ -1,1 +1,1 @@
-[![TravisCI Build Status](https://travis-ci.org/thomasuster/lix-hxcpp-travis.svg?branch=master)](https://travis-ci.org/thomasuster/lix-hxcpp-travis)
+[![TravisCI Build Status](https://travis-ci.org/thomasuster/lix-nme-travis.svg?branch=master)](https://travis-ci.org/thomasuster/lix-nme-travis)
