@@ -19,7 +19,6 @@ install:
   
   # Build HXCPP
   - LIX_HXCPP=$(node cdFile.js haxe_libraries/hxcpp.hxml)
-  - cd $LIX_HXCPP
   - haxelib dev hxcpp $LIX_HXCPP
   - cd $LIX_HXCPP/tools/hxcpp
   - haxe compile.hxml
@@ -31,8 +30,14 @@ install:
   
   # Build NME
   - LIX_NME=$(node cdFile.js haxe_libraries/nme.hxml)
-  - cd $LIX_NME
   - haxelib dev nme $LIX_NME
+  
+  # Try to remove these
+  - LIX_FORMAT=$(node cdFile.js haxe_libraries/format.hxml)
+  - haxelib dev format $LIX_FORMAT
+  - LIX_GM2D=$(node cdFile.js haxe_libraries/gm2d.hxml)
+  - haxelib dev gm2d $LIX_GM2D
+  
   - cd $LIX_NME/tools/nme
   - haxe compile.hxml
   - cd $LIX_NME/project
