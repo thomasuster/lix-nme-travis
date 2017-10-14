@@ -27,6 +27,7 @@ install:
   - haxe compile.hxml
   - cd $LIX_HXCPP/project
   - neko build.n
+  - cd $TRAVIS_BUILD_DIR
   
   # Build NME
   - LIX_NME=$(node cdFile.js haxe_libraries/nme.hxml)
@@ -38,6 +39,7 @@ install:
   - neko build.n
   - cd $LIX_NME/tools/nme
   - haxelib run nme setup
+  - cd $TRAVIS_BUILD_DIR
    
 script:
   - cd $LIX_NME
