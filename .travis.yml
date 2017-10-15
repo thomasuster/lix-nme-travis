@@ -31,12 +31,15 @@ install:
   # Build NME build tool
   - LIX_NME=$(node cdFile.js haxe_libraries/nme.hxml)
   - haxelib dev nme $LIX_NME
+  - cd $TRAVIS_BUILD_DIR
   - LIX_FORMAT=$(node cdFile.js haxe_libraries/format.hxml)
   - haxelib dev format $LIX_FORMAT
+  - cd $TRAVIS_BUILD_DIR
   - LIX_GM2D=$(node cdFile.js haxe_libraries/gm2d.hxml)
   - haxelib dev gm2d $LIX_GM2D
   - cd $LIX_NME/tools/nme
   - haxe compile.hxml
+  - cd $TRAVIS_BUILD_DIR
   
   # Build NME platform
   - LIX_NME_TOOLKIT=$(node cdFile.js haxe_libraries/nme-toolkit.hxml)
