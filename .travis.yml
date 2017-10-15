@@ -2,7 +2,11 @@ language: objective-c
 
 env:
   global:
-    - HXCPP_COMPILE_CACHE=~/hxcache
+  - HXCPP_COMPILE_CACHE=~/hxcache
+    
+cache:
+  directories:
+  - $HXCPP_COMPILE_CACHE
     
 install:
   
