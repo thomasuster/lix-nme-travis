@@ -1,5 +1,9 @@
 language: objective-c
 
+env:
+  global:
+    - HXCPP_COMPILE_CACHE=~/hxcache
+    
 install:
   
   # lix
@@ -52,3 +56,4 @@ install:
    
 script:
   - nme
+  - ls ~/hxcache
