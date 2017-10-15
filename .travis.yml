@@ -51,8 +51,7 @@ install:
   - cd $TRAVIS_BUILD_DIR
    
 script:
-  - cd $LIX_NME
-  - haxelib run nme setup
+  - cd $LIX_NME/tools/nme
   - haxe test.hxml
   - neko bin/TestMain.n
   - cd $LIX_NME/tests
